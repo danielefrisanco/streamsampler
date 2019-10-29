@@ -2,7 +2,10 @@ var stdin = process.stdin,
     inputChunks = [],
     myArgs = process.argv.slice(2);
 
-const streamSamplerHelper = require('./stream_sampler_helper.js'); 
+
+
+
+const streamSamplerHelper = require('./stream_sampler_helper.js');
 
 
 streamSampler = function() {
@@ -11,7 +14,7 @@ streamSampler = function() {
   var charachterStreamLength = 0;
   var representativeRandomSample = "";
   var uniqueRandomInts = [];
-  
+
   if(myArgs && myArgs.length == 1 && isInt(myArgs[0])) {
     representativeRandomSampleSize =  parseInt(myArgs[0]) ;
   } else {
@@ -21,13 +24,13 @@ streamSampler = function() {
   if(inputChunks && inputChunks.length == 1) {
     charachterStream = inputChunks[0];
   } else {
-    return ""; 
+    return "";
   }
 
   if(charachterStream.length >= representativeRandomSampleSize) {
     charachterStreamLength = charachterStream.length;
   } else {
-    return "";    
+    return "";
   }
 
   uniqueRandomInts = streamSamplerHelper.getUniqueRandomInts(representativeRandomSampleSize, charachterStreamLength);
