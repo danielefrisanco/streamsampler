@@ -1,8 +1,8 @@
 StreamSamplerHelper = function () {
 
   isInt = function(value) {
-    return !isNaN(value) && 
-       parseInt(Number(value)) == value && 
+    return !isNaN(value) &&
+       parseInt(Number(value)) == value &&
        !isNaN(parseInt(value, 10));
   };
 
@@ -14,7 +14,6 @@ StreamSamplerHelper = function () {
 
   getUniqueRandomInts = function(desiredSize, max) {
     var uniqueRandomInts = [];
-
     while(uniqueRandomInts.length < desiredSize) {
 
       var candidate = getRandomInt(0, max);
